@@ -1,0 +1,18 @@
+package br.com.filmes;
+
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+
+public class App {
+	
+	public static void main(String[] args) {
+		String url = "https://imdb-api.com/en/API/Top250Movies/k_x0lb1o4j";
+		URI endereco = URI.create(url);
+		HttpClient client = HttpClient.newHttpClient();
+		HttpRequest request = HttpRequest.newBuilder(endereco).GET().build();
+	
+		
+		System.out.println(request);
+	}
+}
